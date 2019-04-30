@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Include="Date.Local.fs" />
     <Compile Include="Date.Format.fs" />
+    <Compile Include="Date.Parse.fs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
