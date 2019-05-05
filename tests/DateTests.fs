@@ -474,3 +474,23 @@ describe "DateFormat tests" <| fun _ ->
                 let formatDateHungarian = Date.Format.localFormat localHungarian localHungarian.Date.DefaultFormat
                 formatDateHungarian testDate
                 |> equal "2017.08.22."
+
+
+describe "DateParse tests" <| fun _ ->
+    let parseUK formatString input = Date.Parse.parse Date.Local.englishUK formatString input
+
+    describe "Pattern 'd': The day of the month, from 1 through 31" <| fun () ->
+        it "1 digit day of month works" <| fun () ->
+            let testDate = "8-1"
+            parseUK "d-M" testDate
+            |> equal (DateTime(1, 1, 8))
+
+        //it "1 digit day of month works" <| fun () ->
+        //    let testDate = DateTime.MinValue
+        //    parseUK "d" "8"
+        //    |> equal (DateTime.MinValue.AddDays 8.)
+
+        //it "2 digit day of month works" <| fun () ->
+        //    let testDate = DateTime(2017, 8, 22, 0, 0, 0)
+        //    formatUK "d" testDate
+        //    |> equal "22"
