@@ -4,7 +4,7 @@ open System
 open Fable.Core
 
 let inline equal (expected: 'T) (actual: 'T): unit =
-    Testing.Assert.AreEqual(expected, actual)
+    Testing.Assert.AreEqual(actual, expected)
 
 [<Global>]
 let it (_msg: string) (f: unit->unit): unit = jsNative
